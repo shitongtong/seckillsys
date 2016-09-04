@@ -6,6 +6,7 @@
 
     <groupId>cn.stt</groupId>
     <artifactId>seckillsys</artifactId>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>seckillsys Maven Webapp</name>
     <url>http://maven.apache.org</url>
