@@ -10,7 +10,15 @@
     <version>1.0-SNAPSHOT</version>
     <name>seckillsys Maven Webapp</name>
     <url>http://maven.apache.org</url>
+    <description>高并发秒杀系统</description>
     <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.8</version>
+        </dependency>
+
         <!--使用junit4, 4之前为编程实现测试，4之后为注解实现-->
         <dependency>
             <groupId>junit</groupId>
@@ -138,6 +146,7 @@
         </dependency>
 
     </dependencies>
+
     <build>
         <finalName>seckillsys</finalName>
     </build>
