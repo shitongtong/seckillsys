@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.8</version>
+            <version>1.16.10</version>
         </dependency>
 
         <!--使用junit4, 4之前为编程实现测试，4之后为注解实现-->
