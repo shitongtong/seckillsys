@@ -1,12 +1,8 @@
-package cn.stt.seckill.dao;
+package cn.stt.seckillsys.dao;
 
-import cn.stt.seckillsys.dao.SeckillDao;
-import cn.stt.seckillsys.dto.Exposer;
-import cn.stt.seckillsys.dto.SeckillExecution;
 import cn.stt.seckillsys.entity.Seckill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
