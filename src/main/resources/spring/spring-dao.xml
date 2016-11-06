@@ -56,4 +56,11 @@
         <!--给出需要Dao接口接口包-->
         <property name="basePackage" value="cn.stt.seckillsys.dao"/>
     </bean>
+
+    <!--RedisDao -->
+    <bean id="redisDao" class="cn.stt.seckillsys.dao.cache.RedisDao">
+        <constructor-arg index="0" value="localhost"></constructor-arg>
+        <constructor-arg index="1" value="6379"></constructor-arg>
+    </bean>
+
 </beans>

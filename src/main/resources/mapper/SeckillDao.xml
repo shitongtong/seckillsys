@@ -7,44 +7,54 @@
     <update id="reduceNumber">
         <!--具体sql-->
         update
-            seckill
+        seckill
         set
-            number = number - 1
+        number = number - 1
         where
-            seckill_id = #{seckillId}
+        seckill_id = #{seckillId}
         and
-            start_time <![CDATA[<=]]> #{killTime}
+        start_time <![CDATA[<=]]> #{killTime}
         and
-            end_time  <![CDATA[>=]]> #{killTime}
+        end_time  <![CDATA[>=]]> #{killTime}
         and
-            number > 0;
+        number > 0;
     </update>
 
     <select id="queryById" parameterType="long" resultType="Seckill">
         select
-            seckill_id
-            ,name
-            ,number
-            ,start_time
-            ,end_time
-            ,create_time
+        seckill_id
+        ,name
+        ,number
+        ,start_time
+        ,end_time
+        ,create_time
         from
-            seckill
+        seckill
         where
-            seckill_id = #{seckillId}
+        seckill_id = #{seckillId}
     </select>
 
     <select id="queryAll" resultType="seckill">
         select
-            seckill_id
-            ,name
-            ,number
-            ,start_time
-            ,end_time
-            ,create_time
+        seckill_id
+        ,name
+        ,number
+        ,start_time
+        ,end_time
+        ,create_time
         from
-            seckill
+        seckill
         order by create_time desc
         limit #{offset},#{limit}
+    </select>
+
+    <!--MyBatis调用存储过程 -->
+    <select id="killByProcedure" statementType="CALLABLE">
+        CALL execute_seckill(
+        #{ seckillId , jdbcType = BIGINT , mode= IN },
+        #{ phone ,jdbcType = BIGINT , mode= IN },
+        #{ killTime , jdbcType = TIMESTAMP , mode= IN },
+        #{ result , jdbcType = INTEGER , mode= OUT }
+        )
     </select>
 </mapper>
