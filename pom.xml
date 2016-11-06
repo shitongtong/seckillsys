@@ -144,6 +144,12 @@
             <artifactId>spring-test</artifactId>
             <version>4.2.6.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>4.10.4</version>
+        </dependency>
 
     </dependencies>
 
