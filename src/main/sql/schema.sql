@@ -4,6 +4,9 @@
 CREATE DATABASE seckillsys DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 /*使用数据库*/
 USE seckillsys;
+
+DROP TABLE IF EXISTS seckill;
+DROP TABLE IF EXISTS success_killed;
 /*创建秒杀库存表*/
 CREATE TABLE seckill(
 seckill_id BIGINT NOT NULL AUTO_INCREMENT COMMENT '商品库存id',
