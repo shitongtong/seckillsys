@@ -63,4 +63,28 @@
         <constructor-arg index="1" value="6379"></constructor-arg>
     </bean>
 
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="300"/>
+        <property name="maxTotal" value="600"/>
+        <property name="maxWaitMillis" value="1000"/>
+        <property name="testOnBorrow" value="true"/>
+    </bean>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <!-- JedisPool(org.apache.commons.pool.impl.GenericObjectPool.Config poolConfig, String host, int port, int timeout, String password, int database)  -->
+        <!--<constructor-arg index="0" ref="poolConfig"/>-->
+        <!--<constructor-arg index="1" value="${redis.host}"/>-->
+        <!--<constructor-arg index="2" value="${redis.port}"/>-->
+        <constructor-arg name="poolConfig" ref="poolConfig"/>
+        <constructor-arg name="host" value="192.168.1.250"/>
+        <constructor-arg name="port" value="6379"/>
+        <constructor-arg name="timeout" value="20000"/>
+        <constructor-arg name="password" value="#{null}"/>
+        <!--<constructor-arg name="password" value=""/>-->
+        <!--<constructor-arg name="password" value="#{'${redis.pass}'!=''?'${redis.pass}':null}"/>-->
+        <constructor-arg name="database" value="5"/>
+    </bean>
+    <bean class="cn.stt.seckillsys.util.JedisUtil" >
+        <property name="jedisPool" ref="jedisPool"/>
+    </bean>
+
 </beans>
